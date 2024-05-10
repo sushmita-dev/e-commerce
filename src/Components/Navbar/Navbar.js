@@ -3,10 +3,14 @@ import './Navbar.css'
 import logo from '../Assets/logo.png'
 import cart_icon from '../Assets/cart_icon.png'
 import { Link } from 'react-router-dom'
-
+import  {Login}  from '../login'
 
 function Navbar() {
     const [menu, setMenu] = useState("shop")
+    const changeMenu = (item) => {
+        console.log(item)
+        setMenu(item)
+    }
     return (
         <div className='navbar'>
             <div className='nav-logo'>
@@ -15,11 +19,17 @@ function Navbar() {
 
             </div>
             <ul className='nav-menu'>
-                <li onClick={() => { setMenu("shop") }}><Link style={{ textDecoration: 'none' }} to='/'>Shop</Link>{menu === "shop" ? <hr /> : <></>}</li>
-                <li onClick={() => { setMenu("mens") }}><Link style={{ textDecoration: 'none' }} to='/mens'>Men</Link>{menu === "mens" ? <hr /> : <></>}</li>
-                <li onClick={() => { setMenu("womens") }}><Link style={{ textDecoration: 'none' }} to='/womens'>Women</Link>{menu === "womens" ? <hr /> : <></>}</li>
-                <li onClick={() => { setMenu("kids") }}><Link style={{ textDecoration: 'none' }} to='/kids'></Link>Kids{menu === "kids" ? <hr /> : <></>}</li>
+                <li onClick={() => { changeMenu("shop") }}><Link style={{ textDecoration: 'none' }} to='/'>Shop</Link>{menu === "shop" ? <hr /> : <></>}</li>
+                <li onClick={() => { changeMenu("mens") }}><Link style={{ textDecoration: 'none' }} to='/mens'>Men</Link>{menu === "mens" ? <hr /> : <></>}</li>
+                <li onClick={() => { changeMenu("womens") }}><Link style={{ textDecoration: 'none' }} to='/womens'>Women</Link>{menu === "womens" ? <hr /> : <></>}</li>
+                <li onClick={() => { changeMenu("kids") }}><Link style={{ textDecoration: 'none' }} to='/kids'>Kids</Link>{menu === "kids" ? <hr /> : <></>}</li>
             </ul>
+            <Login rong="red" number="1"/> 
+            <Login rong="green" number="2"/> 
+            <Login rong="yellow" number="3"/> 
+            <Login rong="blue" number="4"/> 
+
+
             <div className='nav-login-cart'>
                 <Link to='/login'><button>login</button></Link>
                 <Link to='/cart'><img src={cart_icon} alt='' /></Link >
