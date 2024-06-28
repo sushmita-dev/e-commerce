@@ -24,10 +24,8 @@ function Navbar() {
                 <li onClick={() => { changeMenu("womens") }}><Link style={{ textDecoration: 'none' }} to='/womens'>Women</Link>{menu === "womens" ? <hr /> : <></>}</li>
                 <li onClick={() => { changeMenu("kids") }}><Link style={{ textDecoration: 'none' }} to='/kids'>Kids</Link>{menu === "kids" ? <hr /> : <></>}</li>
             </ul>
-            <Login rong="red" number="1"/> 
-            <Login rong="green" number="2"/> 
-            <Login rong="yellow" number="3"/> 
-            <Login rong="blue" number="4"/> 
+           
+            
 
 
             <div className='nav-login-cart'>
